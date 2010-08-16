@@ -3,9 +3,11 @@
  */
 package net.frontlinesms.plugins.forms.data.repository.hibernate;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 
 import net.frontlinesms.data.DuplicateKeyException;
 import net.frontlinesms.data.domain.Contact;
@@ -60,6 +62,47 @@ public class HibernateFormDaoTest extends HibernateTestCase {
 		
 		formDao.deleteForm(formOne);
 		assertEquals(1, formDao.getCount());
+	}
+	
+	public void testUniqueFormId () throws DuplicateKeyException {
+		Form formOne = new Form("form1");
+		formDao.saveForm(formOne);
+		
+		Form formTwo = new Form("form2");
+		formDao.saveForm(formTwo);
+		
+		final int FORM_ID_ONE = (int)formOne.getFormMobileId();
+		final int FORM_ID_TWO = (int)formTwo.getFormMobileId();
+		
+		Group group = new Group(new Group(null, null), "Group");
+		groupDao.saveGroup(group);
+		formOne.setPermittedGroup(group);
+		formOne.finalise();
+		
+		assertEquals(formOne, formDao.getFromId(FORM_ID_ONE));
+		assertNotSame(formOne, formDao.getFromId(FORM_ID_TWO));
+		
+		formDao.deleteForm(formOne);
+		
+		List<Integer> deletedIds = new ArrayList<Integer>();
+		deletedIds.add(FORM_ID_ONE);
+		
+		for (int i = 0 ; i < 250 ; ++i) {
+			Form form = new Form("form" + i);
+			formDao.saveForm(form);
+			System.err.println("Saving form with id: " + form.getFormMobileId());
+			if (i % 5 == 0) {
+				deletedIds.add(form.getFormMobileId());
+				formDao.deleteForm(form);
+			}
+		}
+		
+		
+		for (Form form : formDao.getAllForms()) {
+			System.out.println("Form id: " + form.getFormMobileId());
+			assertFalse(deletedIds.contains(form.getFormMobileId()));
+
+		}
 	}
 	
 	public void testFormsForUser () throws DuplicateKeyException {

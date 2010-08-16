@@ -142,7 +142,6 @@ public class HibernateFormDao extends BaseHibernateDao<Form> implements FormDao,
 		List<Form> forms = getList(criteria);
 		
 		for (Form formWithDereferencedGroup : forms) {
-			System.err.println("Delete form: " + formWithDereferencedGroup.getName());
 			formWithDereferencedGroup.setPermittedGroup(null);
 			try {
 				this.update(formWithDereferencedGroup);
