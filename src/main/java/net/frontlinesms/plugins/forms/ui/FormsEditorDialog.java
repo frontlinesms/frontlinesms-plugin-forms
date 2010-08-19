@@ -82,13 +82,13 @@ public class FormsEditorDialog extends JDialog {
 
 		Container scrollContent = scrollPane.getViewport();
 		JPanel scrollContentPanel = new JPanel();
-		scrollContent.add(scrollContentPanel, new SimpleConstraints(0, 0, 800, 650));
+		scrollContent.add(scrollContentPanel, new SimpleConstraints(0, 0, 800, 550));
 		
 		Container innerContentPane = scrollContentPanel;
 		SimpleLayout contentPaneLayout = new SimpleLayout();
 		innerContentPane.setLayout(contentPaneLayout);
 		pnDrawing = new DrawingPanel();
-		innerContentPane.add(pnDrawing, new SimpleConstraints(0, 0, 500, 580));
+		innerContentPane.add(pnDrawing, new SimpleConstraints(0, 0, 500, 480));
 		JScrollPane sp = new JScrollPane(propertiesTable);
 		sp.setFont(FrontlineUI.currentResourceBundle.getFont());
 		
@@ -98,7 +98,7 @@ public class FormsEditorDialog extends JDialog {
 		titledBorder.setTitleFont(FrontlineUI.currentResourceBundle.getFont());
 		sp.setBorder(titledBorder);
 		
-		innerContentPane.add(sp, new SimpleConstraints(510, 0, 280, 580));
+		innerContentPane.add(sp, new SimpleConstraints(510, 0, 280, 480));
 		
 		tfFormName = new JTextField();
 		tfFormName.addActionListener(new ActionListener() {
@@ -112,8 +112,8 @@ public class FormsEditorDialog extends JDialog {
 		
 		FontMetrics m = formName.getFontMetrics(formName.getFont());
 		int width = m.stringWidth(formName.getText()) + formName.getIcon().getIconWidth();
-		innerContentPane.add(formName, new SimpleConstraints(160, 590));
-		innerContentPane.add(tfFormName, new SimpleConstraints(160 + width + 20, 588, 200, null));
+		innerContentPane.add(formName, new SimpleConstraints(160, 490));
+		innerContentPane.add(tfFormName, new SimpleConstraints(160 + width + 20, 488, 200, null));
 		
 		JButton btSave = new JButton(InternationalisationUtils.getI18NString(ACTION_SAVE), new ImageIcon(FrontlineUtils.getImage("/icons/tick.png", getClass())));
 		btSave.setFont(FrontlineUI.currentResourceBundle.getFont());
@@ -133,13 +133,13 @@ public class FormsEditorDialog extends JDialog {
 		});
 		
 		int posSaveButton = 160 + width + 20 + 200 + 20;
-		innerContentPane.add(btSave, new SimpleConstraints(posSaveButton, 585));
+		innerContentPane.add(btSave, new SimpleConstraints(posSaveButton, 485));
 		
 		FontMetrics btSaveMetrics = btSave.getFontMetrics(btSave.getFont());
-		innerContentPane.add(btCancel, new SimpleConstraints(posSaveButton + btSaveMetrics.stringWidth(btSave.getText()) + btSave.getIcon().getIconWidth() + 40, 585));
+		innerContentPane.add(btCancel, new SimpleConstraints(posSaveButton + btSaveMetrics.stringWidth(btSave.getText()) + btSave.getIcon().getIconWidth() + 40, 485));
 		
 		this.setResizable(true);
-		this.setSize(815, 665);
+		this.setSize(815, 560);
 		try {
 			// This method is only available in Java6+.  It might be sensible just to ditch
 			// the code altogether, although surely there is a pre-Java6 way to set an icon
