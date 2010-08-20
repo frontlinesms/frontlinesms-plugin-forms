@@ -33,20 +33,6 @@ public class HibernateFormResponseDaoTest1 extends HibernateTestCase {
 	public void testGetFormResponses() {
 		testGetFormResponses(2, 31, 28);
 		testGetFormResponses(5, 47, 38);
-		
-		for(int i=2; i<6; i+=3) {
-			Form form = this.formDao.getFromId(i);
-			System.out.println(i + ": " + formResponseDao.getFormResponseCount(form));
-			
-			List<FormResponse> rz = this.formResponseDao.getFormResponses(form, 0, 100);
-			for(FormResponse r : rz) {
-				for(ResponseValue p : r.getResults()) {
-					System.out.print("\t" + p.toString());
-				}
-				System.out.println();
-			}
-			System.out.println();
-		}
 	}
 	
 	private void testGetFormResponses(int formId, int expectedFieldCount, int expectedResponseCount) {
