@@ -109,8 +109,4 @@ public class FormField implements Serializable {
 	public void setForm(Form form) {
 		this.form = form;
 	}
-
-	public Form getForm() {
-		return form;
-	}
 }

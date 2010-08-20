@@ -38,6 +38,7 @@ public class HibernateFormResponseDaoTest1 extends HibernateTestCase {
 	private void testGetFormResponses(int formId, int expectedFieldCount, int expectedResponseCount) {
 		Form form = this.formDao.getFromId(formId);
 		// There may be fields without values returned here
+		assertFalse("There are no fields attached to this form.", form.getFields().size() == 0);
 		assertTrue(form.getFields().size() >= expectedFieldCount);
 		
 		List<FormResponse> rz = this.formResponseDao.getFormResponses(form, 0, expectedResponseCount * 2);

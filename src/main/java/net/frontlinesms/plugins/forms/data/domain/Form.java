@@ -44,7 +44,7 @@ public class Form implements Serializable {
 	/** The name of this form */
 	private String name;
 	/** Fields attached to this form */
-	@OneToMany(fetch=FetchType.EAGER, targetEntity=FormField.class, cascade=CascadeType.ALL, mappedBy="form")
+	@OneToMany(fetch=FetchType.EAGER, targetEntity=FormField.class, cascade=CascadeType.ALL)
 	@OrderBy(value="positionIndex asc")
 	private List<FormField> fields = new ArrayList<FormField>();
 	
