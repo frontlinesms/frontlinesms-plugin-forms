@@ -41,7 +41,7 @@ public class HibernateFormResponseDao extends BaseHibernateDao<FormResponse> imp
 	public int getFormResponseCount(Form form) {
 		DetachedCriteria criteria = super.getCriterion();
 		criteria.add(Restrictions.eq(FormResponse.FIELD_FORM, form));
-		return super.getCount(criteria );
+		return super.getCount(criteria);
 	}
 
 	/** @see FormResponseDao#getFormResponses(Form, int, int) */
@@ -61,6 +61,13 @@ public class HibernateFormResponseDao extends BaseHibernateDao<FormResponse> imp
 		String selectString = "SELECT fr FROM " + FormResponse.class.getName() + " fr " +
 				"WHERE " + FormResponse.FIELD_FORM + "=?";
 		return super.getList(selectString, startIndex, limit, form);
+	}
+
+	/** @see FormResponseDao#getFormResponses(Form) */
+	public List<FormResponse> getFormResponses(Form form) {
+		DetachedCriteria criteria = super.getCriterion();
+		criteria.add(Restrictions.eq(FormResponse.FIELD_FORM, form));
+		return super.getList(criteria);
 	}
 
 	/** @see FormResponseDao#saveResponse(FormResponse) */

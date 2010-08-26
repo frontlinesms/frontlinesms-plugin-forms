@@ -23,6 +23,13 @@ public interface FormResponseDao {
 	public List<FormResponse> getFormResponses(Form form, int startIndex, int limit);
 
 	/**
+	 * Gets a list of all responses submitted for a form.
+	 * @param form form whose responses we are fetching
+	 * @return list of responses submitted
+	 */
+	public List<FormResponse> getFormResponses(Form form);
+
+	/**
 	 * Gets the number of responses submitted for a form.
 	 * @param form 
 	 * @return number of responses submitted

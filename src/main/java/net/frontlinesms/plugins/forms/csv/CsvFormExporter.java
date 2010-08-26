@@ -40,8 +40,11 @@ public class CsvFormExporter extends CsvExporter {
 			out = new Utf8FileWriter(exportFile);
 			
 			CsvUtils.writeLine(out, CsvFormExporter.getColumnsNameAsStringArray(toExport));
-			for (FormResponse formResponse : formResponseDao.getFormResponses(toExport, 0, 0)) {
-				CsvUtils.writeLine(out, CsvFormExporter.getResultsAsStringArray(formResponse, contactDao.getFromMsisdn(formResponse.getSubmitter())));
+			for (FormResponse formResponse : formResponseDao.getFormResponses(toExport)) {
+				String submitterPhoneNumber = formResponse.getSubmitter();
+				Contact submitterContact = contactDao.getFromMsisdn(submitterPhoneNumber);
+				if(submitterContact == null) submitterContact = new Contact("", submitterPhoneNumber, "", "", "", true);
+				CsvUtils.writeLine(out, CsvFormExporter.getResultsAsStringArray(formResponse, submitterContact));
 			}
 		}  finally {
 			if (out != null) out.close();
