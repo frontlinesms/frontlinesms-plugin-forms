@@ -12,7 +12,6 @@ import java.util.List;
 
 import thinlet.Thinlet;
 
-import net.frontlinesms.FrontlineSMSConstants;
 import net.frontlinesms.csv.CsvExporter;
 import net.frontlinesms.data.domain.Contact;
 import net.frontlinesms.data.domain.Group;
@@ -26,7 +25,6 @@ import net.frontlinesms.plugins.forms.data.domain.*;
 import net.frontlinesms.plugins.forms.data.repository.*;
 import net.frontlinesms.plugins.forms.ui.components.*;
 import net.frontlinesms.plugins.BasePluginThinletTabController;
-import net.frontlinesms.ui.FileChooser;
 import net.frontlinesms.ui.Icon;
 import net.frontlinesms.ui.UiGeneratorController;
 import net.frontlinesms.ui.events.TabChangedNotification;
@@ -222,6 +220,8 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 	}
 
 	public void doExport(String filename) {
+		ui.removeConfirmationDialog();
+		
 		Object formsList = find("formsList");
 		Form selectedForm = getForm(ui.getSelectedItem(formsList));
 		
@@ -233,9 +233,10 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 			
 			this.ui.setStatus(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_SUCCESSFUL));
 		}
-		catch (IOException e) {
-			log.debug(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_FAILED), e);
-			this.ui.alert(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_FAILED));
+		catch (IOException ex) {
+			log.debug(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_FAILED), ex);
+			// FIXME create a proper UiGeneratorController.alert(String, Throwable) method so we don't have to cobble this stuff together every time
+			this.ui.alert(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_FAILED) + ": " + ex.getLocalizedMessage());
 		} finally {
 			removeDialog(exportDialog);
 		}
