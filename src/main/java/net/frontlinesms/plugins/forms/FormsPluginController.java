@@ -16,6 +16,7 @@ import net.frontlinesms.plugins.BasePluginController;
 import net.frontlinesms.plugins.PluginController;
 import net.frontlinesms.plugins.PluginControllerProperties;
 import net.frontlinesms.plugins.PluginInitialisationException;
+import net.frontlinesms.plugins.PluginSettingsController;
 import net.frontlinesms.plugins.forms.data.FormHandlingException;
 import net.frontlinesms.plugins.forms.data.domain.Form;
 import net.frontlinesms.plugins.forms.data.domain.FormResponse;
@@ -255,5 +256,9 @@ public class FormsPluginController extends BasePluginController implements Incom
 	 */
 	public FormDao getFormDao() {
 		return formDao;
+	}
+
+	public PluginSettingsController getSettingsController(UiGeneratorController uiController) {
+		return null;
 	}
 }
