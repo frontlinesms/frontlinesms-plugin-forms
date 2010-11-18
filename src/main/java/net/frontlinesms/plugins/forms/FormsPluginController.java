@@ -257,8 +257,4 @@ public class FormsPluginController extends BasePluginController implements Incom
 	public FormDao getFormDao() {
 		return formDao;
 	}
-
-	public PluginSettingsController getSettingsController(UiGeneratorController uiController) {
-		return null;
-	}
 }
