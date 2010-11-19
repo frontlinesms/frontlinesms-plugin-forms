@@ -3,6 +3,9 @@
 # The maven "target" directory - a temporary directory used in Maven builds
 target/
 
+# Maven release plugin temporary files
+release.properties
+
 # Eclipse files and directories
 bin/
 .classpath
