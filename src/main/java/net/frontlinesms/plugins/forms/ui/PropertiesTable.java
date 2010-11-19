@@ -42,7 +42,7 @@ public class PropertiesTable extends JTable {
 	private Vector<String> data = null;
 	
 	public PropertiesTable() {
-		if (FrontlineUI.currentResourceBundle.getFont() != null) {
+		if (FrontlineUI.currentResourceBundle != null && FrontlineUI.currentResourceBundle.getFont() != null) {
 			// We have to set the correct font for some languages, and we have to create a CellRenderer
 			FrontlineFormsCellRenderer frontlineFormsCellRenderer = new FrontlineFormsCellRenderer();
 			setDefaultRenderer(Object.class, frontlineFormsCellRenderer);
