@@ -58,8 +58,8 @@ public class CsvFormExporter extends CsvExporter {
 	 */
 	private static String[] getColumnsNameAsStringArray (Form toExport) {
 		LinkedList<String> columnsName = new LinkedList<String>(); 
-		columnsName.add(InternationalisationUtils.getI18NString(FrontlineSMSConstants.COMMON_CONTACT_NAME));
-		columnsName.add(InternationalisationUtils.getI18NString(FrontlineSMSConstants.COMMON_PHONE_NUMBER)); 
+		columnsName.add(InternationalisationUtils.getI18nString(FrontlineSMSConstants.COMMON_CONTACT_NAME));
+		columnsName.add(InternationalisationUtils.getI18nString(FrontlineSMSConstants.COMMON_PHONE_NUMBER)); 
 		
 		for (FormField field : toExport.getFields()) {
 			if (field.getType().hasValue()) {

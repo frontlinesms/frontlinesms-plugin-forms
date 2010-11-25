@@ -50,8 +50,8 @@ public class PropertiesTable extends JTable {
 		}		
 		model = new MyTableModel();
 		columns = new Vector<String>();
-		columns.add(InternationalisationUtils.getI18NString(FormsThinletTabController.COMMON_PROPERTY));
-		columns.add(InternationalisationUtils.getI18NString(FormsThinletTabController.COMMON_VALUE));
+		columns.add(InternationalisationUtils.getI18nString(FormsThinletTabController.COMMON_PROPERTY));
+		columns.add(InternationalisationUtils.getI18nString(FormsThinletTabController.COMMON_VALUE));
 		model.setDataVector(data, columns);
 		this.setModel(model);
 		this.getTableHeader().setReorderingAllowed(false);

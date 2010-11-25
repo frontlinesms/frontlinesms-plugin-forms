@@ -42,7 +42,7 @@ public class TimeField extends FComponent {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_FCOMP_TIME);
+		return InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_FCOMP_TIME);
 	}
 
 	/** @see FComponent#getIcon() */

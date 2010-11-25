@@ -50,7 +50,7 @@ public class PalettePanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		// We have to set the correct font for some languages
-		TitledBorder titledBorder = new TitledBorder(InternationalisationUtils.getI18NString(FormsThinletTabController.COMMON_PALETTE));
+		TitledBorder titledBorder = new TitledBorder(InternationalisationUtils.getI18nString(FormsThinletTabController.COMMON_PALETTE));
 		titledBorder.setTitleFont(FrontlineUI.currentResourceBundle.getFont());
 		
 		setBorder(titledBorder);
@@ -66,7 +66,7 @@ public class PalettePanel extends JPanel {
 				LOG.debug("", e);
 			}
 		}
-		setToolTipText(InternationalisationUtils.getI18NString(FormsThinletTabController.TOOLTIP_DRAG_TO_PREVIEW));
+		setToolTipText(InternationalisationUtils.getI18nString(FormsThinletTabController.TOOLTIP_DRAG_TO_PREVIEW));
 	}
 
 	/**

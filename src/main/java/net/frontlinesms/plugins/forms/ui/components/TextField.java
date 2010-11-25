@@ -41,7 +41,7 @@ public class TextField extends FComponent {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_FCOMP_TEXT_FIELD);
+		return InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_FCOMP_TEXT_FIELD);
 	}
 
 	/** @see FComponent#getIcon() */

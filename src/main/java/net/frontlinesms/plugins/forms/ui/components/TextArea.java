@@ -43,7 +43,7 @@ public class TextArea extends FComponent {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_FCOMP_TEXT_AREA);
+		return InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_FCOMP_TEXT_AREA);
 	}
 
 	/** @see FComponent#getIcon() */
