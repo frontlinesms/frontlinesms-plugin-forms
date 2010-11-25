@@ -8,7 +8,6 @@ import java.util.List;
 import net.frontlinesms.junit.HibernateTestCase;
 import net.frontlinesms.plugins.forms.data.domain.Form;
 import net.frontlinesms.plugins.forms.data.domain.FormResponse;
-import net.frontlinesms.plugins.forms.data.domain.ResponseValue;
 import net.frontlinesms.plugins.forms.data.repository.FormDao;
 import net.frontlinesms.plugins.forms.data.repository.FormResponseDao;
 

@@ -15,10 +15,7 @@ import net.frontlinesms.events.EventBus;
 import net.frontlinesms.events.EventObserver;
 import net.frontlinesms.events.FrontlineEventNotification;
 import net.frontlinesms.plugins.forms.data.domain.Form;
-import net.frontlinesms.plugins.forms.data.domain.FormField;
-import net.frontlinesms.plugins.forms.data.domain.FormFieldType;
 import net.frontlinesms.plugins.forms.data.domain.FormResponse;
-import net.frontlinesms.plugins.forms.data.domain.ResponseValue;
 import net.frontlinesms.plugins.forms.data.repository.FormResponseDao;
 
 /**
