@@ -32,7 +32,7 @@ public class NumericTextField extends TextField {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_FCOMP_NUMBER);
+		return InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_FCOMP_NUMBER);
 	}
 
 	/** @see FComponent#getIcon() */

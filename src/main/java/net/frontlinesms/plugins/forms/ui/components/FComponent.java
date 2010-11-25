@@ -73,7 +73,7 @@ public abstract class FComponent implements Serializable, Cloneable {
 		if(this.label != null && this.label.length() > 0) {
 			return this.label;
 		} else {
-			return InternationalisationUtils.getI18NString(PROPERTY_DISPLAY_VALUE_NO_LABEL);
+			return InternationalisationUtils.getI18nString(PROPERTY_DISPLAY_VALUE_NO_LABEL);
 		}
 	}
 	

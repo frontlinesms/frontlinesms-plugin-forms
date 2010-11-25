@@ -41,7 +41,7 @@ public class TruncatedText extends FComponent {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_FCOMP_TRUNCATED_TEXT);
+		return InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_FCOMP_TRUNCATED_TEXT);
 	}
 
 	/** @see FComponent#getIcon() */

@@ -69,7 +69,7 @@ public class FormsEditorDialog extends JDialog {
 	private static final String COMMON_PROPERTIES = "plugins.forms.properties";
 	
 	public FormsEditorDialog(Frame owner) {
-		super(owner, "FrontlineSMS - " + InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_KEY_FORMS_EDITOR), true);
+		super(owner, "FrontlineSMS - " + InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_KEY_FORMS_EDITOR), true);
 		propertiesTable = new PropertiesTable();
 		
 		// Make the content scrollable
@@ -94,7 +94,7 @@ public class FormsEditorDialog extends JDialog {
 		
 		
 		// We have to set the correct font for some languages
-		TitledBorder titledBorder = new TitledBorder(InternationalisationUtils.getI18NString(COMMON_PROPERTIES));
+		TitledBorder titledBorder = new TitledBorder(InternationalisationUtils.getI18nString(COMMON_PROPERTIES));
 		titledBorder.setTitleFont(FrontlineUI.currentResourceBundle.getFont());
 		sp.setBorder(titledBorder);
 		
@@ -106,7 +106,7 @@ public class FormsEditorDialog extends JDialog {
 				save();
 			}
 		});
-		JLabel formName = new JLabel(InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_KEY_FORM_NAME) + ": ");
+		JLabel formName = new JLabel(InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_KEY_FORM_NAME) + ": ");
 		//formName.setFont(FrontlineUI.currentResourceBundle.getFont());
 		formName.setIcon(new ImageIcon(FrontlineUtils.getImage("/icons/form.png", getClass())));
 		
@@ -115,7 +115,7 @@ public class FormsEditorDialog extends JDialog {
 		innerContentPane.add(formName, new SimpleConstraints(160, 490));
 		innerContentPane.add(tfFormName, new SimpleConstraints(160 + width + 20, 488, 200, null));
 		
-		JButton btSave = new JButton(InternationalisationUtils.getI18NString(ACTION_SAVE), new ImageIcon(FrontlineUtils.getImage("/icons/tick.png", getClass())));
+		JButton btSave = new JButton(InternationalisationUtils.getI18nString(ACTION_SAVE), new ImageIcon(FrontlineUtils.getImage("/icons/tick.png", getClass())));
 		btSave.setFont(FrontlineUI.currentResourceBundle.getFont());
 		
 		btSave.addActionListener(new ActionListener() {
@@ -123,7 +123,7 @@ public class FormsEditorDialog extends JDialog {
 				save();
 			}
 		});
-		JButton btCancel = new JButton(InternationalisationUtils.getI18NString(ACTION_CANCEL), new ImageIcon(FrontlineUtils.getImage("/icons/cross.png", getClass())));
+		JButton btCancel = new JButton(InternationalisationUtils.getI18nString(ACTION_CANCEL), new ImageIcon(FrontlineUtils.getImage("/icons/cross.png", getClass())));
 		btCancel.setFont(FrontlineUI.currentResourceBundle.getFont());
 		
 		btCancel.addActionListener(new ActionListener() {
@@ -173,7 +173,7 @@ public class FormsEditorDialog extends JDialog {
 		current = pnDrawing.getCurrent();
 		String name = tfFormName.getText();
 		if (name.equals("")) {
-			JOptionPane.showMessageDialog(this, InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_KEY_MESSAGE_FORM_NAME_BLANK));
+			JOptionPane.showMessageDialog(this, InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_KEY_MESSAGE_FORM_NAME_BLANK));
 			return;
 		}
 		current.setName(name);
@@ -213,10 +213,10 @@ public class FormsEditorDialog extends JDialog {
 		propertiesTable.clean();
 		if (getSelectedComponent() != null) {
 			FComponent component = getSelectedComponent().getComponent();
-			propertiesTable.addProperty(InternationalisationUtils.getI18NString(FComponent.PROPERTY_TYPE), component.getDescription());
+			propertiesTable.addProperty(InternationalisationUtils.getI18nString(FComponent.PROPERTY_TYPE), component.getDescription());
 			String label = component.getLabel();
 			if(label == null) label = "";
-			propertiesTable.addProperty(InternationalisationUtils.getI18NString(FComponent.PROPERTY_LABEL), label);
+			propertiesTable.addProperty(InternationalisationUtils.getI18nString(FComponent.PROPERTY_LABEL), label);
 		}
 	}
 	

@@ -71,12 +71,12 @@ public class DrawingPanel extends JPanel {
 		setLayout(new SimpleLayout());
 		
 		JLabel bin = new JLabel(new ImageIcon(FrontlineUtils.getImage(Icon.BIN, getClass())));
-		bin.setToolTipText(InternationalisationUtils.getI18NString(FormsThinletTabController.TOOLTIP_DRAG_TO_REMOVE));
+		bin.setToolTipText(InternationalisationUtils.getI18nString(FormsThinletTabController.TOOLTIP_DRAG_TO_REMOVE));
 		add(bin, new SimpleConstraints(470, HEIGHT - 40));
 		
-		JLabel labelSentenceDeleteKey = new JLabel(InternationalisationUtils.getI18NString(FormsThinletTabController.SENTENCE_DELETE_KEY) + ".");
-		JLabel labelSentenceUpKey = new JLabel(InternationalisationUtils.getI18NString(FormsThinletTabController.SENTENCE_UP_KEY) + ".");
-		JLabel labelSentenceDownKey = new JLabel(InternationalisationUtils.getI18NString(FormsThinletTabController.SENTENCE_DOWN_KEY) + ".");
+		JLabel labelSentenceDeleteKey = new JLabel(InternationalisationUtils.getI18nString(FormsThinletTabController.SENTENCE_DELETE_KEY) + ".");
+		JLabel labelSentenceUpKey = new JLabel(InternationalisationUtils.getI18nString(FormsThinletTabController.SENTENCE_UP_KEY) + ".");
+		JLabel labelSentenceDownKey = new JLabel(InternationalisationUtils.getI18nString(FormsThinletTabController.SENTENCE_DOWN_KEY) + ".");
 		
 		// We have to set the correct font for some languages
 		labelSentenceDeleteKey.setFont(FrontlineUI.currentResourceBundle.getFont());

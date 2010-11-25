@@ -39,7 +39,7 @@ public class CheckBox extends FComponent {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FormsThinletTabController.I18N_FCOMP_CHECKBOX);
+		return InternationalisationUtils.getI18nString(FormsThinletTabController.I18N_FCOMP_CHECKBOX);
 	}
 
 	/** @see FComponent#getIcon() */

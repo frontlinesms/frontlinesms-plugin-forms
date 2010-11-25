@@ -42,7 +42,7 @@ public class DateField extends FComponent {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FrontlineSMSConstants.COMMON_DATE);
+		return InternationalisationUtils.getI18nString(FrontlineSMSConstants.COMMON_DATE);
 	}
 
 	/** @see FComponent#getIcon() */

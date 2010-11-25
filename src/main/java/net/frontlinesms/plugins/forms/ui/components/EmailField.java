@@ -46,7 +46,7 @@ public class EmailField extends FComponent {
 	/** @see FComponent#getDescription() */
 	@Override
 	public String getDescription() {
-		return InternationalisationUtils.getI18NString(FrontlineSMSConstants.COMMON_E_MAIL_ADDRESS);
+		return InternationalisationUtils.getI18nString(FrontlineSMSConstants.COMMON_E_MAIL_ADDRESS);
 	}
 
 	/** @see FComponent#getIcon() */

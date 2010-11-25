@@ -62,7 +62,7 @@ public class PreviewPanel extends JPanel implements MouseListener, KeyListener {
 		setLayout(new SimpleLayout());
 		
 		// We have to set the correct font for some languages
-		TitledBorder titledBorder = new TitledBorder(InternationalisationUtils.getI18NString(FormsThinletTabController.COMMON_PREVIEW));
+		TitledBorder titledBorder = new TitledBorder(InternationalisationUtils.getI18nString(FormsThinletTabController.COMMON_PREVIEW));
 		titledBorder.setTitleFont(FrontlineUI.currentResourceBundle.getFont());
 		setBorder(titledBorder);
 		

@@ -243,7 +243,7 @@ public class FormsPluginController extends BasePluginController implements Incom
 	 */
 	public void sendForm(Form form, Collection<Contact> contacts) {
 		// Send a text SMS to each contact informing them that a new form is available.
-		String messageContent = InternationalisationUtils.getI18NString(I18N_NEW_FORMS_SMS, form.getName());
+		String messageContent = InternationalisationUtils.getI18nString(I18N_NEW_FORMS_SMS, form.getName());
 		for(Contact c : contacts) {
 			// TODO if it is possible, we could send forms directly to people here
 			this.frontlineController.sendTextMessage(c.getPhoneNumber(), messageContent);

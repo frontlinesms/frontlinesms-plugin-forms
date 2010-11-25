@@ -199,9 +199,9 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 	 */
 	public void formsTab_exportResults(String dataPath) {
 		if (!dataPath.contains(File.separator) || !(new File(dataPath.substring(0, dataPath.lastIndexOf(File.separator))).isDirectory())) {
-			this.ui.alert(InternationalisationUtils.getI18NString(MESSAGE_BAD_DIRECTORY));
+			this.ui.alert(InternationalisationUtils.getI18nString(MESSAGE_BAD_DIRECTORY));
 		} else if (dataPath.substring(dataPath.lastIndexOf(File.separator), dataPath.length()).equals(File.separator)) {
-			this.ui.alert(InternationalisationUtils.getI18NString(MESSAGE_NO_FILENAME));
+			this.ui.alert(InternationalisationUtils.getI18nString(MESSAGE_NO_FILENAME));
 		} else {
 			log.debug("Filename is [" + dataPath + "] before [" + CsvExporter.CSV_EXTENSION + "] check.");
 			if (!dataPath.endsWith(CsvExporter.CSV_EXTENSION)) {
@@ -231,12 +231,12 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 		try {
 			CsvFormExporter.exportForm(file, selectedForm, contactDao, formResponseDao);
 			
-			this.ui.setStatus(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_SUCCESSFUL));
+			this.ui.setStatus(InternationalisationUtils.getI18nString(MESSAGE_EXPORT_TASK_SUCCESSFUL));
 		}
 		catch (IOException ex) {
-			log.debug(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_FAILED), ex);
+			log.debug(InternationalisationUtils.getI18nString(MESSAGE_EXPORT_TASK_FAILED), ex);
 			// FIXME create a proper UiGeneratorController.alert(String, Throwable) method so we don't have to cobble this stuff together every time
-			this.ui.alert(InternationalisationUtils.getI18NString(MESSAGE_EXPORT_TASK_FAILED) + ": " + ex.getLocalizedMessage());
+			this.ui.alert(InternationalisationUtils.getI18nString(MESSAGE_EXPORT_TASK_FAILED) + ": " + ex.getLocalizedMessage());
 		} finally {
 			removeDialog(exportDialog);
 		}
@@ -287,7 +287,7 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 		log.info("FormsThinletTabController.showGroupSelecter() : " + selectedForm);
 		if(selectedForm != null) {
 			GroupSelecterDialog selecter = new GroupSelecterDialog(ui, this);
-			selecter.init(InternationalisationUtils.getI18NString(I18N_PLUGINS_FORMS_CHOOSE_GROUP), ui.getRootGroup());
+			selecter.init(InternationalisationUtils.getI18nString(I18N_PLUGINS_FORMS_CHOOSE_GROUP), ui.getRootGroup());
 			selecter.show();
 		}
 	}
@@ -335,7 +335,7 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 			if(selectedForm.getPermittedGroup() == null) {
 				// The form has no group set, so we should explain that this needs to be done.
 				// FIXME i18n
-				ui.alert(InternationalisationUtils.getI18NString(I18N_KEY_SET_GROUP_BEFORE));
+				ui.alert(InternationalisationUtils.getI18nString(I18N_KEY_SET_GROUP_BEFORE));
 			} else if(!selectedForm.isFinalised()) { // check the form is finalised.
 				// if form is not finalised, warn that it will be!
 				ui.showConfirmationDialog("showSendSelectionDialog", this, I18N_KEY_CONFIRM_FINALISE);
@@ -387,7 +387,7 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 		if(recipientItems.length == 0) {
 			// There are no contacts in the "send to" list.  We should remove the dialog and inform the user
 			// of the problem.
-			ui.alert(InternationalisationUtils.getI18NString(I18N_KEY_NO_CONTACTS_TO_NOTIFY));
+			ui.alert(InternationalisationUtils.getI18nString(I18N_KEY_NO_CONTACTS_TO_NOTIFY));
 			ui.removeDialog(dgChooseContacts);
 		} else {
 			HashSet<Contact> selectedContacts = new HashSet<Contact>();
@@ -404,7 +404,7 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 			// Issue the send command to the plugin controller
 			this.getPluginController().sendForm(form, selectedContacts);
 
-			ui.alert(InternationalisationUtils.getI18NString(I18N_FORM_SENT_DIALOG_MESSAGE, form.getName(), Integer.toString(selectedContacts.size())));
+			ui.alert(InternationalisationUtils.getI18nString(I18N_FORM_SENT_DIALOG_MESSAGE, form.getName(), Integer.toString(selectedContacts.size())));
 			
 			ui.removeDialog(dgChooseContacts);
 		}
@@ -649,8 +649,8 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 
 		// Create a node showing the group for this form
 		Group g = form.getPermittedGroup();
-		String groupName = g == null ? InternationalisationUtils.getI18NString(I18N_PLUGINS_FORMS_NOT_SET) : g.getName();
-		Object groupNode = ui.createNode(InternationalisationUtils.getI18NString(I18N_PLUGINS_FORMS_GROUP, groupName), null);
+		String groupName = g == null ? InternationalisationUtils.getI18nString(I18N_PLUGINS_FORMS_NOT_SET) : g.getName();
+		Object groupNode = ui.createNode(InternationalisationUtils.getI18nString(I18N_PLUGINS_FORMS_GROUP, groupName), null);
 		ui.setIcon(groupNode, Icon.GROUP);
 		ui.add(node, groupNode);
 		
@@ -669,7 +669,7 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 		ui.removeAll(header);
 		if (selected != null) {
 			// FIXME check if this constant can be removed from frontlinesmsconstants class
-			Object column = ui.createColumn(InternationalisationUtils.getI18NString(I18N_FORM_SUBMITTER), null);
+			Object column = ui.createColumn(InternationalisationUtils.getI18nString(I18N_FORM_SUBMITTER), null);
 			ui.setWidth(column, 100);
 			ui.setIcon(column, Icon.PHONE_CONNECTED);
 			ui.add(header, column);
