@@ -129,7 +129,9 @@ public class FormsPluginController extends BasePluginController implements Incom
 	
 	/** @see net.frontlinesms.plugins.PluginController#deinit() */
 	public void deinit() {
-		this.frontlineController.removeIncomingMessageListener(this);
+		if (this.frontlineController != null) {
+			this.frontlineController.removeIncomingMessageListener(this);
+		}
 	}
 
 	/** @see BasePluginController#initThinletTab(UiGeneratorController)  */

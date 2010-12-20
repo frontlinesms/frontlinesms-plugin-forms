@@ -50,7 +50,7 @@ import net.frontlinesms.ui.i18n.InternationalisationUtils;
  * <li> kadu(at)masabi(dot)com
  */
 public class DrawingPanel extends JPanel {
-	private static final int HEIGHT = 580;
+	private static final int HEIGHT = 480;
 
 	private static final long serialVersionUID = -623321310155700309L;
 	
