@@ -33,8 +33,8 @@
 	</licenses>
 	
 	<scm>
-		<connection>scm:git://frontlinesms.git.sourceforge.net/gitroot/frontlinesms/plugin-forms.git</connection>
-		<developerConnection>scm:git:ssh://${sourceforge.username}@frontlinesms.git.sourceforge.net/gitroot/frontlinesms/plugin-forms</developerConnection>
+		<connection>scm:git://github.com/frontlinesms/frontlinesms-plugin-forms.git</connection>
+		<developerConnection>scm:git:git@github.com:frontlinesms/frontlinesms-plugin-forms.git</developerConnection>
 	</scm>
 	
 	<repositories>
