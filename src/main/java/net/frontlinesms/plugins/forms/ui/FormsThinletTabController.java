@@ -286,7 +286,7 @@ public class FormsThinletTabController extends BasePluginThinletTabController<Fo
 		Form selectedForm = getSelectedForm();
 		log.info("FormsThinletTabController.showGroupSelecter() : " + selectedForm);
 		if(selectedForm != null) {
-			GroupSelecterDialog selecter = new GroupSelecterDialog(ui, this);
+			GroupSelecterDialog selecter = new GroupSelecterDialog(ui, this, ui.getFrontlineController().getGroupDao());
 			selecter.init(InternationalisationUtils.getI18nString(I18N_PLUGINS_FORMS_CHOOSE_GROUP), ui.getRootGroup());
 			selecter.show();
 		}
